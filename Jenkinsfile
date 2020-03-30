@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'python ./FlaskApp/hello.py'
+                sh 'python ./hello-world.py'
             }
         }
     }
