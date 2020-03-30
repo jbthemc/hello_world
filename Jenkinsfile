@@ -8,8 +8,14 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-                sh 'python --version'
-                sh './FlaskApp/hello.py'
+            }
+        }
+    }
+    agent { docker { image 'python:3.5.1' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python ./FlaskApp/hello.py'
             }
         }
     }
