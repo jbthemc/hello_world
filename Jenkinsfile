@@ -8,6 +8,8 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
+                sh 'python --version'
+                sh './FlaskApp/hello.py'
             }
         }
     }
